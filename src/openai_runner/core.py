@@ -37,8 +37,7 @@ class AutoRunner:
         self.__hide_context_vars(tools)
 
         create_params = {
-            # TODO： 原 "model": agent.model,
-            "model": 'agnes-2.5-flash',
+            "model": agent.model,
             "messages": messages,
             "tools": tools or None,
             "tool_choice": agent.tool_choice,
