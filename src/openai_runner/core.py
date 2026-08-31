@@ -81,7 +81,7 @@ class AutoRunner:
             message:ChatCompletionMessage = completion.choices[0].message
             debug_print(self.debug, "Received completion:", str(message))
             message.sender = active_agent.name
-            history_msg = json.loads(message.model_dump_json())
+            history_msg = message.model_dump()
             history.append(history_msg)
             loop_count = loop_count + 1
             if not message.tool_calls or not execute_tools:
